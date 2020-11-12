@@ -1,0 +1,257 @@
+
+$base-color : rgb(230, 14, 50);
+$font-color : #999;
+
+.conBigDiv {
+    padding-bottom: 50px;
+  .title {
+    // border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .hr {
+    // border-top: 1px solid #d9d9d9;
+    height: 3px;
+    margin: 12px 0 12px 0;
+  }
+
+  .redfont {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 3px solid #e60e32;
+    font-size: 15px;
+  }
+
+  .red_font {
+    color: $base-color;
+  }
+
+  .topMenuRight {
+    text-align: right;
+  }
+
+  .searchTxt {
+    flex: 1;
+    width: 100%;
+  }
+
+  .pageD {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .addrlistflex .list-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .addrlistflex .list-item > div {
+    flex: 25%;
+    line-height: 4;
+
+    &:hover {
+      color: rgb(242, 15, 52);
+    }
+  }
+
+  .noaddr {
+    margin-top: 200px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+  }
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      margin-bottom: 16px;
+    }
+
+
+    .customSpan {
+      width: 48px;
+      display: inline-block;
+      text-align: right;
+    }
+  }
+  .editDiv{
+	line-height: 60px;
+	font-size:14px
+  }
+  .editDivOne{
+	line-height: 60px;
+	font-size:14px;
+  }
+  .width99{
+	width:99px;
+	}
+  .width200 {
+	width: 200px;
+	margin-right: 24px;
+	float:left;
+  }
+  .width200A{
+	  width:200px;
+  }
+
+  .width300 {
+	width: 350px;
+	margin-right: 24px;
+  }
+  .floatLeft{
+	  float:left
+  }
+//   .tLeft{
+// 	  text-align: left;
+//   }
+//   .tRight{
+// 	  text-align: right;
+//   }
+  .pageDiv{
+	text-align: center;
+	padding:20px;
+	}
+
+	.SubDiv {
+		padding: 20px 130px;
+		line-height: 60px;
+		color: #8A9199;
+		font-size: 14px;
+
+		.lineDiv {
+			margin-top: 20px;
+		}
+
+		.input500 {
+			width: 500px;
+		}
+
+		.backFont {
+			color: #222426;
+		}
+	}
+	.editInput{
+		width:250px;
+
+	}
+	.delIconRed{
+		color: $base-color;
+		cursor: pointer;
+	}
+	.pointDiv{
+		margin-top:20px;
+		display:flex;
+		line-height: 26px;
+		.pointDivOne{
+			display:flex;
+		}
+	}
+
+	.addBtn{
+		height:32px;
+	}
+	.flowDiv{
+		margin-top: 20px;
+		line-height: 26px;
+	}
+	.checkboxDiv{
+		line-height: 40px;
+		float:left
+	}
+	.checkTxtDiv{
+		line-height: 40px;
+		max-height: 300px;
+		overflow: auto;
+	}
+	.checkTxtDivOne{
+		line-height: 40px;
+		max-height: 200px;
+		overflow: auto;
+		background: #F6F6F6;
+		color: #333333;
+		margin-bottom: 20px;
+		border-radius: 5px;
+		padding:10px;
+		span{
+			color:#999;
+
+		}
+		.checkNameSpan{
+			color:#333333;
+			font-size: 14px;
+			margin-right: 35px;
+
+		}
+		.delIcon{
+			color:#ABABAB;
+			position: absolute;
+			margin-top: 7px;
+			cursor: pointer;
+		}
+		.sumPeopleDiv{
+			padding-top:30px
+		}
+	}
+	.verifySpan {
+		padding: 2px 5px;
+		background: #eaeaea;
+		border-radius: 20px;
+		color:#333;
+		font-size:14px;
+		margin-right: 6px;
+	}
+	.description{
+		width: 91%;
+		max-width: 1350px;
+		min-height:101px;
+		background: #F6F6F6;
+		border-radius: 5px;
+		margin-bottom:18px;
+		line-height: 43px;
+		padding-top: 10px;
+		padding-left: 22px;
+		.titTxt{
+			font-size:16px;
+			font-weight: bold;
+			color:#333;
+			margin-right: 25px;
+		}
+		.verifyTxt{
+			font-size:14px;
+			color:#333
+		}
+	}
+	.addPointDiv{
+		margin-left:35px;
+		width: 91%;
+		max-width: 1370px;
+	}
+	.searchTxtDiv{
+		line-height:30px;
+		height:70px;
+		padding-top: 20px;
+		font-size:14px;
+		border-bottom: 1px solid #E5E5E5;
+		padding-bottom: 10px;
+		margin-bottom: 24px;
+		width: 91%;
+		max-width: 1380px;
+		span{
+			color:#999
+		}
+	}
+	.delBtn{
+		color:#666;
+		cursor: pointer;
+	}
+	.width65{
+		width:65px;
+	}
+
+}
