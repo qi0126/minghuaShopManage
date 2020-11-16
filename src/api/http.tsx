@@ -14,7 +14,7 @@ let instance = axios.create({
 // 请求拦截器
 instance.interceptors.request.use(
 	config => {
-		config.headers.accessToken = localStorage.accessToken
+		config.headers.accesstoken = localStorage.accesstoken
 		return config
 	},
 	error => {

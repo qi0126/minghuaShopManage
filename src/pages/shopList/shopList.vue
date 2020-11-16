@@ -2,14 +2,14 @@
 	<div v-loading="loadingTF" class="conBigDiv orderlist">
 		<el-breadcrumb separator-class="el-icon-arrow-right" class="topnav">
 			<el-breadcrumb-item>node商城后台管理</el-breadcrumb-item>
-			<el-breadcrumb-item>产品管理</el-breadcrumb-item>
+			<el-breadcrumb-item>店铺管理</el-breadcrumb-item>
 		</el-breadcrumb>
 		<div>
 			<div class="hr" />
 
 			<!-- header -->
 			<el-row class="topLineHeight">
-				<el-col :span="1">
+				<!-- <el-col :span="1">
 					<div class="leftTitleOne">
 						类型
 					</div>
@@ -28,7 +28,7 @@
 							:value="item.category_id"
 						></el-option>
 					</el-select>
-				</el-col>
+				</el-col> -->
 				<el-col :span="5" class="tRight" :offset="13">
 					<div class="width80F">
 						<el-button
@@ -69,27 +69,10 @@
 					@row-dblclick="orderDetail"
 				>
 					<el-table-column
-						prop="product_img_url"
-						label="图片"
-						align="center"
-					>
-						<template slot-scope="scope">
-							<div class="tCenter">
-								<img
-									:src="scope.row.product_img_url"
-									class="imgS"
-								/>
-							</div>
-						</template>
-					</el-table-column>
-					<el-table-column
-						prop="product_id"
+						prop="shop_id"
 						label="编号"
 					></el-table-column>
-					<el-table-column
-						prop="category_name"
-						label="主题ID"
-					></el-table-column>
+
 					<el-table-column
 						prop="shop_name"
 						label="店铺"
@@ -99,54 +82,9 @@
 						label="店铺地址"
 					></el-table-column>
 					<el-table-column
-						prop="product_name"
-						label="产品名称"
-						width="300px"
+						prop="category_name"
+						label="所属主题"
 					></el-table-column>
-					<el-table-column
-						prop="product_price"
-						label="产品价格"
-					></el-table-column>
-					<el-table-column
-						prop="product_uprice"
-						label="产品优惠价"
-					></el-table-column>
-					<el-table-column
-						prop="product_detail"
-						label="产品详情"
-						width="500px"
-					>
-						<template slot-scope="scope">
-							<span v-if="scope.row.product_detail">
-								<span
-									v-if="scope.row.product_detail.length <= 50"
-									>{{ scope.row.product_detail }}</span
-								>
-								<span v-else>
-									{{
-										scope.row.product_detail.substring(
-											0,
-											50
-										)
-									}}...
-									<el-popover
-										placement="top-start"
-										width="200"
-										trigger="hover"
-										:content="scope.row.product_detail"
-									>
-										<span
-											slot="reference"
-											class="txtRed cPointer"
-										>
-											更多</span
-										>
-									</el-popover>
-								</span>
-							</span>
-							<span v-else>-</span>
-						</template>
-					</el-table-column>
 				</el-table>
 				<!-- <div class="pageDiv">
 					<el-pagination
@@ -181,30 +119,11 @@ export default class proMangeList extends Vue {
 
 	created_fun() {
 		this.getAllDate() //放行条读取
-		this.getCategoryList() //调用主题列表接口
-	}
-	getCategoryList() {
-		let self = this
-		app.$api.categoryList().then(
-			res => {
-				if (res.data.code == 200) {
-					self.categoryList = res.data.data ? res.data.data : []
-					self.categoryList.unshift({
-						category_id: "",
-						category_name: "全部"
-					})
-					// console.log("主题:", self.categoryList)
-				} else {
-					self.$message.error(res.data.msg)
-				}
-			},
-			err => {}
-		)
 	}
 	getAllDate() {
 		let self = this
 		this.loadingTF = true
-		app.$api.proManage(this.search_where).then(
+		app.$api.shopList(this.search_where).then(
 			res => {
 				self.loadingTF = false
 				if (res.data.code == 200) {
@@ -237,5 +156,5 @@ export default class proMangeList extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import "proMangeList.scss";
+@import "shopList.scss";
 </style>

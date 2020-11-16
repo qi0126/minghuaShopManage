@@ -22,9 +22,24 @@ class Api {
 		return this.http.post("/login", params)
 		// return this.http.get("/categorygoods?mId=34")
 	}
-	//登录
-	proManage() {
-		return this.http.get("/proManage")
+	//用户信息查询
+	userInfo(params) {
+		return this.http.get("/userInfo", params)
+	}
+	//产品查询
+	proManage(params) {
+		return this.http.post("/proManage", params)
+	}
+	//产品详情
+	getProId(params) {
+		return this.http.get("/detail", params)
+	}
+	categoryList(){
+		return this.http.get("/categoryList")
+	}
+	//产品查询
+	shopList(params) {
+		return this.http.post("/shopList", params)
 	}
 
 }

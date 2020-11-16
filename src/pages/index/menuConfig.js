@@ -11,7 +11,7 @@ export let menu = [
 	{
 		id: "102",
 		menuName: "店铺管理",
-		menuUrl: "/index/proDeviceManageList",
+		menuUrl: "/index/shopList",
 		parentId: "100",
 		childs: [],
 		auth: "",

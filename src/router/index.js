@@ -13,51 +13,8 @@ const proMangeList = () => import("@/pages/proMangeList/proMangeList") // 产品
 const proDetails = () => import("@/pages/proMangeList/proDetails") // 产品管理详情页
 
 //生产设备类放行管理
-const proDeviceManageList = () =>
-	import("@/pages/proDeviceManage/proDeviceManageList") // 生产设备类放行管理列表页
-const proDeviceDetails = () =>
-	import("@/pages/proDeviceManage/proDeviceDetails") // 生产设备类放行管理详情页
-
-//行政设备物料类放行管理
-const publicDeviceManageList = () =>
-	import("@/pages/publicDeviceManage/publicDeviceManageList") // 行政设备物料类放行管理列表页
-
-const publicDeviceDetalis = () =>
-	import("@/pages/publicDeviceManage/publicDeviceDetalis") // 行政设备物料类放行管理详情页
-
-//人员类放行管理
-const personCateManageList = () =>
-	import("@/pages/personCateManage/personCateManageList") // 人员类放行管理列表页
-const personCateDetails = () =>
-	import("@/pages/personCateManage/personCateDetails") // 人员类放行管理详情页
-
-//保安放行管理
-const safetyCateManageList = () =>
-	import("@/pages/safetyCateManage/safetyCateManageList") // 保安放行管理列表页
-const safetyCateDetalis = () =>
-	import("@/pages/safetyCateManage/safetyCateDetalis") // 保安放行管理详情页
-const safetyCateDetalisGold = () =>
-	import("@/pages/safetyCateManage/safetyCateDetalisGold") // 保安放行管理产品详情页
-const safetyCateDetalisPro = () =>
-	import("@/pages/safetyCateManage/safetyCateDetalisPro") // 保安放行管理生产设备类详情页
-const safetyCateDetalisPublic = () =>
-	import("@/pages/safetyCateManage/safetyCateDetalisPublic") // 保安放行管理行政设备物料类详情页
-const safetyCateDetalisPerson = () =>
-	import("@/pages/safetyCateManage/safetyCateDetalisPerson") // 保安放行管理人员类详情页
-
-//核销报表
-const eliminationsReportList = () =>
-	import("@/pages/eliminationsReport/eliminationsReportList") // 核销报表列表页
-
-//审核流程管理
-const auditFlowView = () => import("@/pages/auditFlowManage/auditFlowView") // 审核流程管理查看页
-
-//保安岗亭设置
-const safetyPavilionSetList = () =>
-	import("@/pages/safetyPavilionSet/safetyPavilionSetList") // 保安岗亭设置列表页
-
-//基础设置
-const basicSetList = () => import("@/pages/basicSet/basicSetList") // 基础设置列表页
+const shopList = () => import("@/pages/shopList/shopList") // 生产设备类放行管理列表页
+const shopDetails = () => import("@/pages/shopList/shopDetails") // 生产设备类放行管理详情页
 
 let routes = [
 	{
@@ -77,68 +34,12 @@ let routes = [
 				component: proDetails
 			},
 			{
-				path: "proDeviceManageList", //生产设备类放行管理列表页
-				component: proDeviceManageList
+				path: "shopList", //店铺管理
+				component: shopList
 			},
 			{
-				path: "proDeviceDetails", //生产设备类放行管理详情页
-				component: proDeviceDetails
-			},
-			{
-				path: "publicDeviceManageList", //行政设备物料类放行管理列表页
-				component: publicDeviceManageList
-			},
-			{
-				path: "publicDeviceDetalis", //行政设备物料类放行管理详情页
-				component: publicDeviceDetalis
-			},
-			{
-				path: "personCateManageList", //人员类放行管理列表页
-				component: personCateManageList
-			},
-			{
-				path: "personCateDetails", //人员类放行管理详情页
-				component: personCateDetails
-			},
-			{
-				path: "safetyCateManageList", //保安放行管理列表页
-				component: safetyCateManageList
-			},
-			{
-				path: "safetyCateDetalis", //保安放行管理详情页
-				component: safetyCateDetalis
-			},
-			{
-				path: "safetyCateDetalisGold", //保安放行管理产品详情页
-				component: safetyCateDetalisGold
-			},
-			{
-				path: "safetyCateDetalisPro", //保安放行管理生产设备类详情页
-				component: safetyCateDetalisPro
-			},
-			{
-				path: "safetyCateDetalisPublic", //保安放行管理行政物料设备类详情页
-				component: safetyCateDetalisPublic
-			},
-			{
-				path: "safetyCateDetalisPerson", //保安放行管理人员类详情页
-				component: safetyCateDetalisPerson
-			},
-			{
-				path: "eliminationsReportList", //核销报表列表页
-				component: eliminationsReportList
-			},
-			{
-				path: "auditFlowView", //审核流程管理查看页
-				component: auditFlowView
-			},
-			{
-				path: "safetyPavilionSetList", //保安岗亭设置列表页
-				component: safetyPavilionSetList
-			},
-			{
-				path: "basicSetList", //基础设置列表页
-				component: basicSetList
+				path: "shopDetails", //店铺管理详情页
+				component: shopDetails
 			}
 		]
 	},

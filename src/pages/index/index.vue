@@ -19,6 +19,7 @@
 				</el-menu>
 			</div>
 			<div class="headerRight">
+				{{ user_namesub }}
 				<i class="el-icon-menu" @click="loginOut"></i>
 			</div>
 		</div>
@@ -43,6 +44,7 @@ export default {
 			menus: {
 				menu: _.cloneDeep(menu),
 			},
+			user_namesub:''
 		}
 	},
 
@@ -55,11 +57,26 @@ export default {
 	},
 
 	created() {
-		// this.getMenus()
+		this.getUserInfo()//用户信息
 		this.$router.push(this.menusMenu[0].menuUrl)
 	},
 
 	methods: {
+		//用户信息
+		getUserInfo(){
+			let self = this
+			let params={
+				uId:JSON.parse(localStorage.userInfo).user_id
+			}
+			app.$api.userInfo(params).then(
+				res => {
+					self.user_namesub = res.data.user_namesub
+				},
+				err => {
+					self.loadingTF = false
+				}
+			)
+		},
 		//一级菜单选择
 		handleSelect(key) {
 			this.menuIndex = key
