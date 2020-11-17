@@ -20,7 +20,7 @@ export let menu = [
 	{
 		id: "103",
 		menuName: "订单管理",
-		menuUrl: "/index/publicDeviceManageList",
+		menuUrl: "/index/orderList",
 		parentId: "100",
 		childs: [],
 		auth: "",
@@ -29,7 +29,7 @@ export let menu = [
 	{
 		id: "104",
 		menuName: "用户管理",
-		menuUrl: "/index/personCateManageList",
+		menuUrl: "/index/userList",
 		parentId: "100",
 		childs: [],
 		auth: "",

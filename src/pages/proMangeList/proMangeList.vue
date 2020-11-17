@@ -59,7 +59,7 @@
 			<div>
 				<el-table
 					:data="orderList"
-					height="750"
+					height="600"
 					:header-cell-style="{
 						fontWeight: '#bold',
 						background: '#fafafa'
@@ -148,18 +148,18 @@
 						</template>
 					</el-table-column>
 				</el-table>
-				<!-- <div class="pageDiv">
+				<div class="pageDiv">
 					<el-pagination
-						:current-page.sync="pageNum"
+						:current-page.sync="search_where.pageNum"
 						:page-sizes="[12, 30, 50, 100]"
-						:page-size="pageSize"
+						:page-size="search_where.pageSize"
 						layout="total, sizes, prev, pager, next, jumper"
 						:total="orderSize"
 						background
 						@size-change="handleSizeChange"
 						@current-change="handleCurrentChange"
 					></el-pagination>
-				</div> -->
+				</div>
 			</div>
 		</div>
 	</div>
@@ -172,8 +172,9 @@ import { Vue, Component, Prop, Watch, Emit } from "vue-property-decorator"
 export default class proMangeList extends Vue {
 	orderList: Array<object> = []
 	categoryList: Array<object> = [] //主题列表
-	search_where: Object = { cateId: "" }
+	search_where: Object = { cateId: "",pageNum:1,pageSize:12 }
 	loadingTF: Boolean = false
+	orderSize: number = 0 //放行单总个数
 
 	created() {
 		this.created_fun()
@@ -209,6 +210,7 @@ export default class proMangeList extends Vue {
 				self.loadingTF = false
 				if (res.data.code == 200) {
 					self.orderList = res.data.data ? res.data.data : []
+					self.orderSize = res.data.proNum
 				} else {
 					self.$message.error(res.data.msg)
 				}
@@ -226,12 +228,21 @@ export default class proMangeList extends Vue {
 	}
 	//重置按钮
 	resetSear() {
-		this.search_where = { cateId: "" }
+		this.search_where = { cateId: "",pageSize:12,pageNum:1 }
 		this.getAllDate()
 	}
 	//查询按钮
 	sureSear() {
 		this.getAllDate()
+	}
+		//分页事件开始
+	handleSizeChange(val) {
+		this.search_where.pageSize = val
+		this.search_where.pageNum = 1
+		this.getAllDate(1, val)
+	}
+	handleCurrentChange(val) {
+		this.getAllDate(val, this.search_where.pageSize)
 	}
 }
 </script>

@@ -2,14 +2,14 @@
 	<div v-loading="loadingTF" class="conBigDiv orderlist">
 		<el-breadcrumb separator-class="el-icon-arrow-right" class="topnav">
 			<el-breadcrumb-item>node商城后台管理</el-breadcrumb-item>
-			<el-breadcrumb-item>店铺管理</el-breadcrumb-item>
+			<el-breadcrumb-item>产品管理</el-breadcrumb-item>
 		</el-breadcrumb>
 		<div>
 			<div class="hr" />
 
 			<!-- header -->
 			<el-row class="topLineHeight">
-				<!-- <el-col :span="1">
+				<el-col :span="1">
 					<div class="leftTitleOne">
 						类型
 					</div>
@@ -28,7 +28,7 @@
 							:value="item.category_id"
 						></el-option>
 					</el-select>
-				</el-col> -->
+				</el-col>
 				<el-col :span="5" class="tRight" :offset="13">
 					<div class="width80F">
 						<el-button
@@ -66,23 +66,23 @@
 					}"
 					border
 					style="width: 100%;"
+					@row-dblclick="orderDetail"
 				>
 					<el-table-column
-						prop="shop_id"
-						label="编号"
-					></el-table-column>
-
-					<el-table-column
-						prop="shop_name"
-						label="店铺"
+						prop="user_id"
+						label="用户id"
 					></el-table-column>
 					<el-table-column
-						prop="shop_address"
-						label="店铺地址"
+						prop="user_name"
+						label="用户名称"
 					></el-table-column>
 					<el-table-column
-						prop="category_name"
-						label="所属主题"
+						prop="user_namesub"
+						label="用户别名"
+					></el-table-column>
+					<el-table-column
+						prop="user_number"
+						label="用户编号"
 					></el-table-column>
 				</el-table>
 				<div class="pageDiv">
@@ -123,12 +123,12 @@ export default class proMangeList extends Vue {
 	getAllDate() {
 		let self = this
 		this.loadingTF = true
-		app.$api.shopList(this.search_where).then(
+		app.$api.userList(this.search_where).then(
 			res => {
 				self.loadingTF = false
 				if (res.data.code == 200) {
 					self.orderList = res.data.data ? res.data.data : []
-					self.orderSize = res.data.shopNum
+					self.orderSize = res.data.userNum
 				} else {
 					self.$message.error(res.data.msg)
 				}
@@ -138,7 +138,12 @@ export default class proMangeList extends Vue {
 			}
 		)
 	}
-
+	orderDetail(e) {
+		this.$router.push({
+			path: "userDetails",
+			query: { userId: e.user_id }
+		})
+	}
 	//重置按钮
 	resetSear() {
 		this.search_where = { cateId: "",pageSize:12,pageNum:1 }
@@ -148,7 +153,7 @@ export default class proMangeList extends Vue {
 	sureSear() {
 		this.getAllDate()
 	}
-			//分页事件开始
+		//分页事件开始
 	handleSizeChange(val) {
 		this.search_where.pageSize = val
 		this.search_where.pageNum = 1
@@ -161,5 +166,5 @@ export default class proMangeList extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import "shopList.scss";
+@import "userList.scss";
 </style>

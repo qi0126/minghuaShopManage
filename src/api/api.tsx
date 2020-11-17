@@ -39,7 +39,15 @@ class Api {
 	}
 	//产品查询
 	shopList(params) {
-		return this.http.post("/shopList", params)
+		return this.http.post("/shoplist", params)
+	}
+	//用户查询
+	userList(params) {
+		return this.http.post("/userList", params)
+	}
+	//用户详情查询
+	userDetails(params) {
+		return this.http.post("/userDetails", params)
 	}
 
 }
