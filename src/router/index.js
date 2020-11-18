@@ -15,6 +15,10 @@ const proDetails = () => import("@/pages/proMangeList/proDetails") // 产品管�
 //生产设备类放行管理
 const shopList = () => import("@/pages/shopList/shopList") // 生产设备类放行管理列表页
 
+//订单管理
+const orderList = () => import("@/pages/orderList/orderList") // 订单管理列表页
+const orderDetails = () => import("@/pages/orderList/orderDetails") // 订单管理详情页
+
 //用户管理
 const userList = () => import("@/pages/userList/userList") // 用户管理列表页
 const userDetails = () => import("@/pages/userList/userDetails") // 用户管理详情页
@@ -47,6 +51,14 @@ let routes = [
 			{
 				path: "userDetails", //用户管理详情页
 				component: userDetails
+			},
+			{
+				path: "orderList", // 订单管理
+				component: orderList
+			},
+			{
+				path: "orderDetails", //订单管理详情页
+				component: orderDetails
 			}
 		]
 	},

@@ -49,7 +49,30 @@ class Api {
 	userDetails(params) {
 		return this.http.post("/userDetails", params)
 	}
-
+	//订单查询
+	orderList(params) {
+		return this.http.post("/orderList", params)
+	}
+	//删除购物车
+	delCart(params) {
+		return this.http.post("/delCart", params)
+	}
+	//删除关注
+	delFlow(params) {
+		return this.http.post("/delFlow", params)
+	}
+	//新增地址
+	addAddr(params) {
+		return this.http.post("/addAddr", params)
+	}
+	//修改地址
+	editAddr(params) {
+		return this.http.post("/editAddr", params)
+	}
+	//删除地址
+	delAddr(params) {
+		return this.http.post("/delAddr", params)
+	}
 }
 
 export default new Api()

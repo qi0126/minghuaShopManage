@@ -2,7 +2,7 @@
 	<div v-loading="loadingTF" class="conBigDiv orderlist">
 		<el-breadcrumb separator-class="el-icon-arrow-right" class="topnav">
 			<el-breadcrumb-item>node商城后台管理</el-breadcrumb-item>
-			<el-breadcrumb-item>产品管理</el-breadcrumb-item>
+			<el-breadcrumb-item>订单管理</el-breadcrumb-item>
 		</el-breadcrumb>
 		<div>
 			<div class="hr" />
@@ -59,20 +59,14 @@
 			<div>
 				<el-table
 					:data="orderList"
-					height="600"
 					:header-cell-style="{
 						fontWeight: '#bold',
 						background: '#fafafa'
 					}"
 					border
 					style="width: 100%;"
-					@row-dblclick="orderDetail"
 				>
-					<el-table-column
-						prop="product_img_url"
-						label="图片"
-						align="center"
-					>
+					<el-table-column prop="product_img_url" label="产品图片">
 						<template slot-scope="scope">
 							<div class="tCenter">
 								<img
@@ -83,68 +77,46 @@
 						</template>
 					</el-table-column>
 					<el-table-column
+						prop="order_id"
+						label="订单id"
+					></el-table-column>
+					<el-table-column
+						prop="orderno"
+						label="订单编号"
+					></el-table-column>
+					<el-table-column
+						prop="user_id"
+						label="用户编号"
+					></el-table-column>
+					<el-table-column
+						prop="user_namesub"
+						label="用户全名"
+					></el-table-column>
+					<el-table-column
 						prop="product_id"
-						label="编号"
+						label="产品编号"
 					></el-table-column>
 					<el-table-column
-						prop="category_name"
-						label="主题"
+						prop="ocount"
+						label="订购数量"
 					></el-table-column>
 					<el-table-column
-						prop="shop_name"
-						label="店铺"
+						prop="price"
+						label="产品单价"
 					></el-table-column>
 					<el-table-column
-						prop="shop_address"
-						label="店铺地址"
+						prop="total_price"
+						label="订购总价"
 					></el-table-column>
-					<el-table-column
-						prop="product_name"
-						label="产品名称"
-						width="300px"
-					></el-table-column>
-					<el-table-column
-						prop="product_price"
-						label="产品价格"
-					></el-table-column>
-					<el-table-column
-						prop="product_uprice"
-						label="产品优惠价"
-					></el-table-column>
-					<el-table-column
-						prop="product_detail"
-						label="产品详情"
-						width="500px"
-					>
+					<el-table-column prop="addressarea" label="地址">
 						<template slot-scope="scope">
-							<span v-if="scope.row.product_detail">
+							<div class="tCenter">
 								<span
-									v-if="scope.row.product_detail.length <= 50"
-									>{{ scope.row.product_detail }}</span
+									>{{ scope.row.addressarea }}-{{
+										scope.row.addressinfo
+									}}</span
 								>
-								<span v-else>
-									{{
-										scope.row.product_detail.substring(
-											0,
-											50
-										)
-									}}...
-									<el-popover
-										placement="top-start"
-										width="200"
-										trigger="hover"
-										:content="scope.row.product_detail"
-									>
-										<span
-											slot="reference"
-											class="txtRed cPointer"
-										>
-											更多</span
-										>
-									</el-popover>
-								</span>
-							</span>
-							<span v-else>-</span>
+							</div>
 						</template>
 					</el-table-column>
 				</el-table>
@@ -205,12 +177,12 @@ export default class proMangeList extends Vue {
 	getAllDate() {
 		let self = this
 		this.loadingTF = true
-		app.$api.proManage(this.search_where).then(
+		app.$api.orderList(this.search_where).then(
 			res => {
 				self.loadingTF = false
 				if (res.data.code == 200) {
 					self.orderList = res.data.data ? res.data.data : []
-					self.orderSize = res.data.proNum
+					self.orderSize = res.data.orderNum
 				} else {
 					self.$message.error(res.data.msg)
 				}
@@ -248,5 +220,5 @@ export default class proMangeList extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import "proMangeList.scss";
+@import "orderList.scss";
 </style>
