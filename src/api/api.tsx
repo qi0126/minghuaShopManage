@@ -8,7 +8,7 @@ class Api {
 
 	//上传图片
 	uploadImg(params) {
-		return this.http.upload("/m/pub/uploadImg", params)
+		return this.http.upload("/file/uploading", params)
 	}
 
 	//退出登录
@@ -72,6 +72,18 @@ class Api {
 	//删除地址
 	delAddr(params) {
 		return this.http.post("/delAddr", params)
+	}
+	//修改产品
+	editPro(params) {
+		return this.http.post("/editPro", params)
+	}
+	//新建产品
+	addPro(params) {
+		return this.http.post("/addPro", params)
+	}
+	//删除产品
+	delPro(params) {
+		return this.http.post("/delPro", params)
 	}
 }
 

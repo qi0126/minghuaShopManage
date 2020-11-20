@@ -65,6 +65,7 @@
 							<el-dialog
 								title="新增地址"
 								:visible.sync="addAddressTF"
+								:close-on-click-modal="false"
 								width="500px"
 							>
 								<el-row class="addrDiv">
