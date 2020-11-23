@@ -327,7 +327,6 @@ export default class proMangeList extends Vue {
 		app.$api.shopList(params).then(
 			res => {
 				if (res.data.code == 200) {
-					console.log("店铺：", res.data)
 					self.shopList = res.data.data ? res.data.data : []
 				} else {
 					self.$message.error(res.data.msg)

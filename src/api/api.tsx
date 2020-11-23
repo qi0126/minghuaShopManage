@@ -85,6 +85,18 @@ class Api {
 	delPro(params) {
 		return this.http.post("/delPro", params)
 	}
+	//修改用户
+	editUser(params) {
+		return this.http.post("/editUser", params)
+	}
+	//新建用户
+	addUser(params) {
+		return this.http.post("/addUser", params)
+	}
+	//删除用户
+	delUser(params) {
+		return this.http.post("/delUser", params)
+	}
 }
 
 export default new Api()
