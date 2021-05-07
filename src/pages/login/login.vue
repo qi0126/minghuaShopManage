@@ -1,11 +1,11 @@
 <template>
 	<div class="conBigDiv">
-		<div v-if="printDisTF" class="printDis">
+		<!--<div v-if="printDisTF" class="printDis">
 			系统需要安装打印机插件才能正常使用，请点击“下载安装”，安装完成后请在使用系统前刷新浏览器，<a
 				href="http://bms.szsjysy.com/drivers/lodop-Batar.zip"
 				>立即下载打印插件>></a
 			>
-		</div>
+		</div>-->
 		<div id="loginBig">
 			<el-row>
 				<el-col :span="12">

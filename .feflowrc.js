@@ -70,11 +70,11 @@ module.exports = {
                 dev: {
                     envObj: {
                         NODE_ENV: "'development'",
-						API_HOST: "'http://192.168.33.84:3333'",		//开发环境
-                    	SJY_URL: "'http://192.168.33.84:3333'",
-						HEHE_URL: "'http://192.168.33.84:3333'",
-						API_HOST_H5: "'http://192.168.33.84:3333'",	//H5开发环境
-                        API_IMG: "'http://192.168.33.84:3333'",         //图片服务器开发环境
+						API_HOST: "'http://localhost:3333'",		//开发环境
+                    	SJY_URL: "'http://localhost:3333'",
+						HEHE_URL: "'http://localhost:3333'",
+						API_HOST_H5: "'http://localhost:3333'",	//H5开发环境
+                        API_IMG: "'http://localhost:3333'",         //图片服务器开发环境
                     }
                 },
                 test: {
