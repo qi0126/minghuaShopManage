@@ -103,7 +103,7 @@ export default {
 		loginFun() {
 			let params = {
 				loginName: this.userName,
-				loginPawd: this.userPassword
+				loginPwd: this.userPassword
 			}
 			app.$api.login(params).then(res => {
 				// console.log("res:", res.data.data)
