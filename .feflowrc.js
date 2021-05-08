@@ -70,11 +70,11 @@ module.exports = {
                 dev: {
                     envObj: {
                         NODE_ENV: "'development'",
-						API_HOST: "'http://localhost:3333'",		//开发环境
-                    	SJY_URL: "'http://localhost:3333'",
-						HEHE_URL: "'http://localhost:3333'",
-						API_HOST_H5: "'http://localhost:3333'",	//H5开发环境
-                        API_IMG: "'http://localhost:3333'",         //图片服务器开发环境
+						API_HOST: "'http://183.56.230.6:3333'",		//开发环境
+                    	SJY_URL: "'http://183.56.230.6:3333'",
+						HEHE_URL: "'http://183.56.230.6:3333'",
+						API_HOST_H5: "'http://183.56.230.6:3333'",	//H5开发环境
+                        API_IMG: "'http://183.56.230.6:3333'",         //图片服务器开发环境
                     }
                 },
                 test: {
@@ -110,11 +110,11 @@ module.exports = {
                 build: {
                     envObj: {
                         NODE_ENV: "'production'",
-						API_HOST: "'http://mmj.batargold.com/'",
-                    	SJY_URL: "'http://192.168.16.9:9000'",
-						HEHE_URL: "'http://192.168.16.9:9001'",
-						API_HOST_H5: "'http://mmj.batargold.com/'",
-						API_IMG: "'http://mmj.batargold.com/'"
+						API_HOST: "'http://183.56.230.6:3333'",		//开发环境
+                    	SJY_URL: "'http://183.56.230.6:3333'",
+						HEHE_URL: "'http://183.56.230.6:3333'",
+						API_HOST_H5: "'http://183.56.230.6:3333'",	//H5开发环境
+                        API_IMG: "'http://183.56.230.6:3333'",         //图片服务器开发环境
                     }
                 }
             }
